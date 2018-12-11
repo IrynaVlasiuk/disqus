@@ -8,6 +8,3 @@
     <script type="text/javascript" src="/js/ajax.js"></script>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-<?php session_start();?>
-</body>

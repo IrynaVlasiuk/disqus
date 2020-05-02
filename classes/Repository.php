@@ -1,16 +1,13 @@
 <?php
 
+require_once 'config.php';
+
 class Repository
 {
-    private static $host = "127.0.0.1";
-    private static $dbname = "disqus";
-    private static $username = "root";
-    private static $password = "";
-
     private static function connect()
     {
         try {
-            $pdo = new PDO("mysql:host=" . self::$host . ";dbname=" . self::$dbname . ";charset=utf8", self::$username, self::$password);
+            $pdo = new PDO("mysql:host=" . DBHOST . ";dbname=" . DBNAME . ";charset=utf8", DBUSER, DBPWD);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (PDOException $e) {
